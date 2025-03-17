@@ -31,7 +31,28 @@ Program çalıştırıldığında, iki örnek senaryo üzerinden hesaplamalar ya
 **Pazarlama Kampanyası Seçimi:**
 4 kampanya için verilen bütçe kısıtı altında maksimum ROI ve seçilen kampanyaların indeksleri belirlenir.
 
+## 1. Neden Bu Algoritmalar Kullanıldı ve Ne İşe Yarıyor?
+**Müşteri Destek Temsilcisi Yönlendirmesi (Bitmask DP):**
+Müşteri taleplerine göre temsilci ataması problemi, her müşteriye en uygun temsilcinin seçilmesiyle optimum toplam uygunluk skorunun elde edilmesini gerektirir. Bu tür atama problemleri, tüm kombinasyonların denenmesinde üstel zaman karmaşıklığına yol açabilir. Bitmask DP yaklaşımı, hangi temsilcilerin atandığını bit maskeleri ile izleyerek, alt problemlerin hesaplanıp sonuçların saklanmasını sağlar. Böylece hesaplamalar tekrarlanmaz ve daha verimli bir şekilde optimum sonuç elde edilir.
 
+**Pazarlama Kampanyası Seçimi (0/1 Knapsack DP):**
+Belirli bir bütçe kısıtı altında, farklı kampanyaların maliyet ve beklenen getirilerine göre seçim yapılması gerekmektedir. Bu problem, klasik 0/1 Knapsack problemine benzemektedir. DP kullanılarak, her kampanya için “seç” veya “seçme” kararı verilirken, bütçenin kısıtlandığı durumlarda maksimum getiri hesaplanır. Böylece, bütçeyi aşmadan en yüksek ROI’yi sağlayan kampanyaların seçimi yapılır.
+
+## 2. Dinamik Programlama (DP) Yönteminin Diğer Yaklaşımlardan Farkı Nedir?
+**Optimal Alt Yapı ve Tekrar Eden Hesaplamaların Önlenmesi:**
+DP, problemleri daha küçük ve birbirine bağlı alt problemlere böler. Bu alt problemlerde elde edilen sonuçlar saklanır (memoization veya tabulation), böylece aynı hesaplamalar tekrar tekrar yapılmaz. Bu, özellikle kombinatoryal problemlerde büyük performans artışı sağlar.
+
+**Kararların Birleştirilmesi:**
+DP, her alt problemden gelen optimum çözümleri kullanarak, genel probleme optimum çözüme ulaşır. Bu yaklaşım, "optimal alt yapı" prensibi olarak bilinir.
+
+**Diğer Yöntemlerle Karşılaştırma:**
+
+**Greedy (Açgözlü) Yaklaşım:**
+Greedy algoritmalar her adımda lokal olarak en iyi görünen seçeneği tercih eder. Ancak bu yöntem, tüm problemler için global optimumu garanti etmez. Özellikle karmaşık kombinatoryal problemlerde doğru sonuç vermeyebilir.
+**Brute Force (Kaba Kuvvet) Yöntemi:**
+Tüm olası çözüm kombinasyonlarının denenmesi esasına dayanır; bu da problemin boyutu büyüdükçe hesaplama süresini üstel olarak artırır.
+**Dinamik Programlama:**
+DP, problemi alt parçalara bölüp bu parçaları çözerek, daha verimli (genellikle polinomsal ya da pseudo-polynomial) zamanlarda optimum çözüme ulaşır. Özellikle optimal alt yapıya sahip ve alt problemler arasında tekrar eden hesaplamalar olan durumlarda tercih edilir.
 
 **Katkıda Bulunma**
 
