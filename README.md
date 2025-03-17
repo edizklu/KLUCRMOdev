@@ -49,8 +49,10 @@ DP, her alt problemden gelen optimum çözümleri kullanarak, genel probleme opt
 
 **Greedy (Açgözlü) Yaklaşım:**
 Greedy algoritmalar her adımda lokal olarak en iyi görünen seçeneği tercih eder. Ancak bu yöntem, tüm problemler için global optimumu garanti etmez. Özellikle karmaşık kombinatoryal problemlerde doğru sonuç vermeyebilir.
+
 **Brute Force (Kaba Kuvvet) Yöntemi:**
 Tüm olası çözüm kombinasyonlarının denenmesi esasına dayanır; bu da problemin boyutu büyüdükçe hesaplama süresini üstel olarak artırır.
+
 **Dinamik Programlama:**
 DP, problemi alt parçalara bölüp bu parçaları çözerek, daha verimli (genellikle polinomsal ya da pseudo-polynomial) zamanlarda optimum çözüme ulaşır. Özellikle optimal alt yapıya sahip ve alt problemler arasında tekrar eden hesaplamalar olan durumlarda tercih edilir.
 
